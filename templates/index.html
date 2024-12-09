@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <style>
+        @font-face {
+            font-family: 'RothekBold';
+            src: url('fonts/RothekBold.otf') format('opentype');
+        }
+
+        body {
+            font-family: 'RothekBold', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .buttons a {
+            margin-left: 10px;
+            text-decoration: none;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .buttons a:hover {
+            background-color: #0056b3;
+        }
+
+        .username {
+            font-family: 'RothekBold', Arial, sans-serif;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>The most protected todo list</h1>
+        <div class="buttons">
+            {% if username %}
+                <span class="username">{{ username }}</span>
+                <a href="/logout">Logout</a>
+            {% else %}
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
